@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using FluentAssertions;
-using LITTLEDB;
+using Littledb;
 using NUnit.Framework;
-using Rhino.Mocks;
 
 namespace IExpenses.Tests
 {
