@@ -41,6 +41,19 @@ namespace IExpenses.Tests
         }
 
         [Test]
+        public void ItShoulndAddBudgetByDaysAlreadyCounted()
+        {
+            var twoDaysAgo = DateTime.Today.AddDays(-2);
+            var db = new LittleDB("newYorkTryp");
+            var newyorkExpenses = new Tryp(db);
+
+            newyorkExpenses.Initialize(twoDaysAgo, 20, 0);
+            newyorkExpenses.GetBudget().Total.ShouldBeEquivalentTo(60);
+            var anotherInstance = new Tryp(db);
+            anotherInstance.GetBudget().Total.ShouldBeEquivalentTo(60);
+        }
+
+        [Test]
         public void EachTimeIInstantiateItShouldUpdateTheTotalBudgetBasedOnDays()
         {
             var twoDaysAgo = DateTime.Today.AddDays(-2);

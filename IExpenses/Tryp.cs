@@ -28,8 +28,11 @@ namespace IExpenses
         {
             if (_db.GetAll<DateTime>().Count == 0) return;
             
-            List<DateTime> daysSinceLastUpdate = GetDaysSinceLastUpdate();
+            var daysSinceLastUpdate = GetDaysSinceLastUpdate();
             IncreaseBudget(CalculateBudgetForDays(daysSinceLastUpdate));
+            var daysAlreadyCounted = _db.GetAll<DateTime>();
+            var newDays = daysAlreadyCounted.Union(daysSinceLastUpdate).ToList();
+            _db.SaveList(newDays);
         }
 
         public void IncreaseBudget(int amount)
@@ -62,7 +65,7 @@ namespace IExpenses
             var days = new List<DateTime>();
             for (var date = lastDayCounted; date < today; date = date.AddDays(1))
             {
-                days.Add(date);
+                days.Add(date.AddDays(1));
             }
 
             return days;
