@@ -42,6 +42,16 @@ namespace IExpenses.Tests
             tryp.GetBudget().WeekEnd.ShouldBeEquivalentTo(28);
         }
 
+        [Test]
+        public void CanDeleteTryps()
+        {
+            var iexpenses = new TrypsController();
+            iexpenses.CreateNewTryp(DateTime.Now, 41, 28, "Ecuador");
+            iexpenses.DeleteTryp("Ecuador");
+            iexpenses.GetTrypNames().Contains("Ecuador").Should().Be(false);
+            Directory.Exists("Ecuador").ShouldBeEquivalentTo(false);
+        }
+
         [TearDown]
         public void RemoveDb()
         {

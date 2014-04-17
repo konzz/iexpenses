@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -47,6 +48,18 @@ namespace IExpenses
         {
             var db = new LittleDB(name);
             return new Tryp(db);
+        }
+
+        /// <summary>
+        /// Deletes the tryp db, and removes it from the record.
+        /// </summary>
+        /// <param name="newYork"></param>
+        public void DeleteTryp(string name)
+        {
+            var newList = Db.GetAll<TrypRecord>().Where(record => record.Name != name).ToList();
+            Db.SaveList(newList);
+
+            Directory.Delete(name, true);
         }
 
         protected void CreateTrypRecord(string name)
