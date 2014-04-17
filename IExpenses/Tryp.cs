@@ -111,7 +111,7 @@ namespace IExpenses
             return _db.GetAll<Expense>();
         }
 
-        public double GetTotalExpenses()
+        public decimal GetTotalExpenses()
         {
             var expenses = GetExpenses();
             return expenses.Sum(expense => expense.Amount);

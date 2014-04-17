@@ -86,12 +86,12 @@ namespace IExpenses.Tests
             var db = new LittleDB("newYorkTryp");
             var newyorkExpenses = new Tryp(db);
 
-            var food = new Expense(20.3, "Food", DateTime.Today);
+            var food = new Expense(20.3m, "Food", DateTime.Today);
             newyorkExpenses.AddExpense(food);
 
             var expenses = newyorkExpenses.GetExpenses();
             expenses.Count.Should().Be(1);
-            expenses[0].Amount.Should().Be(20.3);
+            expenses[0].Amount.Should().Be(20.3m);
 
             var taxiExpense = new Expense(5, "Taxi", DateTime.Today);
             newyorkExpenses.AddExpense(taxiExpense);
@@ -107,12 +107,12 @@ namespace IExpenses.Tests
             var db = new LittleDB("newYorkTryp");
             var newyorkExpenses = new Tryp(db);
 
-            var food = new Expense(20.3, "Food", DateTime.Today);
-            var taxi = new Expense(3.2, "Taxi", DateTime.Today);
+            var food = new Expense(20.3m, "Food", DateTime.Today);
+            var taxi = new Expense(3.2m, "Taxi", DateTime.Today);
             newyorkExpenses.AddExpense(food);
             newyorkExpenses.AddExpense(taxi);
 
-            newyorkExpenses.GetTotalExpenses().Should().Be(23.5);
+            newyorkExpenses.GetTotalExpenses().Should().Be(23.5m);
         }
 
         [Test]

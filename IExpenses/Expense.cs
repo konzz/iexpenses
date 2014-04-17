@@ -4,11 +4,11 @@ namespace IExpenses
 {
     public class Expense
     {
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
 
-        public Expense(double amount, string description, DateTime date)
+        public Expense(decimal amount, string description, DateTime date)
         {
             Amount = amount;
             Description = description;
