@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleDB", "..\LITTLEDB\LIT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{9D4B5816-DA9B-4749-84CE-E9B1952F5A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IExpenses.Form", "WindowsFormsApplication1\IExpenses.Form.csproj", "{D964CDA2-E9F9-4AC6-8979-8C66DB47E393}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IExpenses.Form", "IExpenses.Form\IExpenses.Form.csproj", "{D964CDA2-E9F9-4AC6-8979-8C66DB47E393}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
