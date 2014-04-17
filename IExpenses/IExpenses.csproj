@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Budget.cs" />
-    <Compile Include="IExpenses.cs" />
+    <Compile Include="TrypsController.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="Tryp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

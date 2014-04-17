@@ -8,7 +8,7 @@ using Littledb;
 
 namespace IExpenses
 {
-    public class IExpenses
+    public class TrypsController
     {
         protected LittleDB Db = new LittleDB("tryps");
 

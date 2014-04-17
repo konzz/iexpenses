@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IexpensesTests.cs" />
+    <Compile Include="TrypsControllerTests.cs" />
     <Compile Include="TrypTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
