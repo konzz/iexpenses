@@ -22,8 +22,9 @@ namespace IExpenses
         /// <returns></returns>
         public Tryp CreateNewTryp(DateTime startDate, int dailyBudget, int weekEndExtra, string name)
         {
+            var tryp = CreateTryp(startDate, dailyBudget, weekEndExtra, name);
             CreateTrypRecord(name);
-            return CreateTryp(startDate, dailyBudget, weekEndExtra, name);
+            return tryp;
         }
 
         /// <summary>
